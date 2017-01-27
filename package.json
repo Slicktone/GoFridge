@@ -1,0 +1,23 @@
+{
+  "name": "gofridge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slicktone/GoFridge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Slicktone/GoFridge/issues"
+  },
+  "homepage": "https://github.com/Slicktone/GoFridge#readme",
+  "dependencies": {
+    "sequelize": "^3.30.0"
+  }
+}
