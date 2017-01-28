@@ -22,7 +22,11 @@
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
     "method-override": "^2.3.7",
+    "mysql": "^2.13.0",
     "sequelize": "^3.30.0",
     "sql": "^0.73.0"
+  },
+  "engines": {
+    "node": "7.2.1"
   }
 }
