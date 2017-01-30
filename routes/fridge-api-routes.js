@@ -1,4 +1,4 @@
-// Requiring our models
+// Add myFridge Items to this route
 var db = require("../models");
 // Routes
 module.exports = function (app) {
@@ -10,5 +10,3 @@ module.exports = function (app) {
     app.get("/userForm", function (req, res) {
         res.render("userForm");
     })
-
-}
