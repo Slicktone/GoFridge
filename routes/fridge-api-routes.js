@@ -9,4 +9,5 @@ module.exports = function (app) {
 
     app.get("/userForm", function (req, res) {
         res.render("userForm");
-    })
+    });
+}
