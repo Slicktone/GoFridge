@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
-    "password": "gino1024",
-=======
     "password": "*/leave this blank before PRs*/",
->>>>>>> 5fef5ce11efd1dfd504b8e58e3b653209f269cd3
     "database": "fridge_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
