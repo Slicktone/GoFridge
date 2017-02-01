@@ -1,7 +1,14 @@
 // User Table
 module.exports = function(sequelize, DataTypes) {
-	var user = sequelize.define("user", {
-		name: {
+	var users = sequelize.define("users", {
+		first_name: {
+			type: DataTypes.STRING,
+			allowNull: false,
+			Validate: {
+				len: [1]
+			}
+		},
+		last_name: {
 			type: DataTypes.STRING,
 			allowNull: false,
 			Validate: {
@@ -34,12 +41,12 @@ module.exports = function(sequelize, DataTypes) {
 		classMethods: {
 			associate: function(models) {
 				// Associating Author with Posts
-				user.hasMany(models.myFridge);
+				users.hasMany(models.myFridges);
 			}
 		}
 	}, {
 		// may not need timestamps? OH: I think this is needed for Heroku 
 		timestamps: false
 	});
-	return user;
+	return users;
 }

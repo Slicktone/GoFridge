@@ -2,43 +2,56 @@
 var db = require("../models");
 // Routes
 module.exports = function(app) {
-	// created route to render index.handlebars file
+	// route to render index.handlebars files
 	app.get("/", function(req, res) {
 		res.render("index");
 	});
+
 	// GET route for all the items in myFridge
-	app.get("/myFridge", function(req, res) {
+	app.get("/member", function(req, res) {
 		// var query = {};
-		// if (req.query.user_id) {
-		// 	query.userId = req.query.user_id;
+		// if (req.query.users_id) {
+		// 	query.usersId = req.query.users_id;
 		// }
-		db.myFridge.findAll({
-			where: query,
-			include: [db.user]
+		db.myFridges.findAll({
+			// where: query,
+			// include: [db.user]
 		}).then(function(data) {
 			var hbsObject = {
-				myFridge: data
+				myFridges: data
 			};
 			console.log(hbsObject);
-			res.render("myFridge", hbsObject);
+			res.render("member", hbsObject);
+            // console.log(data);
+			// res.json(data);
 		});
 	});
 	// POST route for adding an item to myFridge
-	app.post("/myFridge/add", function(req, res) {
-		db.myFridge.create({
-			category: req.body.category,
-			name: req.body.name,
-			price: req.body.price,
-			refill: req.body.refill
-		}).then(function() {
-			res.redirect("/myFridge");
-		});
+	app.post("/member/add", function(req, res) {
+        console.log(req.body);
+        db.myFridges.create(
+            req.body
+        // {
+		// 	category: req.body.category,
+		// 	name: req.body.name,
+		// 	price: req.body.price,
+		// 	refill: req.body.refill
+		// }
+        ).then(function() {
+			res.redirect("/member");
+		// ).then(function(dbFridge) {
+        //     console.log(dbFridge);
+        //     res.json(dbFridge);
+        }).catch(function(error){
+            console.log(error);
+           
+        });;
 	});
 	// PUT route for updating myFridge item refill date
 	app.put("/myFridge/update/:id", function(req, res) {
 		var condition = "id = " + req.params.id;
 		console.log("condition", condition);
-		db.myFridge.update({
+		db.myFridges.update({
 			refill: req.body.refill
 		}, {
 			where: {
@@ -50,7 +63,7 @@ module.exports = function(app) {
 	});
 	// DELETE route for deleting items from myFridge
 	app.delete("/myFridge/update/:id", function(req, res) {
-		db.myFridge.destroy({
+		db.myFridges.destroy({
 			where: {
 				id: req.params.id
 			}
