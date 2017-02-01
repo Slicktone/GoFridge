@@ -4,7 +4,15 @@
 .mainContent{
     text-align: center;
     margin: 10%;
+    color: white;
 }
 .brand-logo{
     margin: 0 5%;
+}
+body {
+    background-image: url("../images/background.jpg");
+    
+}
+.nav-wrapper{
+    background-color: #958F8F;
 }
