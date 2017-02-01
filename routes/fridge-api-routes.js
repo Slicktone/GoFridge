@@ -59,3 +59,4 @@ module.exports = function(app) {
 		});
 	});
 };
+>>>>>>> 7d26ea6bb37c5c42e4c03cc25f6f84d1891372a8
