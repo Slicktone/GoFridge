@@ -1,6 +1,6 @@
-// Inventory Table
+// myFridges Table
 module.exports = function(sequelize, DataTypes) {
-	var myFridge = sequelize.define("myFridge", {
+	var myFridges = sequelize.define("myFridges", {
 		category: {
 			type: DataTypes.STRING,
 			allowNull: false,
@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		},
 		refill: {
-			type: DataTypes.DATE,
+			type: DataTypes.DATEONLY,
 			allowNull: false
 		}
 	}, {
@@ -32,7 +32,7 @@ module.exports = function(sequelize, DataTypes) {
 			associate: function(models) {
 				// When we delete a User, we'll also delete their fridge "cascade"
 				// A User (foreignKey) is required or a fridge can't be made
-				myFridge.belongsTo(models.user, {
+				myFridges.belongsTo(models.users, {
 					onDelete: "cascade",
 					foreignKey: {
 						allowNull: false
@@ -44,5 +44,5 @@ module.exports = function(sequelize, DataTypes) {
 		// may not need timestamps? OH: I think this is needed for Heroku 
 		timestamps: false
 	});
-	return myFridge;
+	return myFridges;
 };
