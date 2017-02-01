@@ -27,7 +27,6 @@ module.exports = function(app) {
 	});
 	// POST route for adding an item to myFridge
 	app.post("/myFridge/add", function(req, res) {
-		console.log("Hi Omar");
         console.log(req.body);
         db.myFridges.create(
             req.body
@@ -43,8 +42,6 @@ module.exports = function(app) {
             console.log(dbFridge);
             res.json(dbFridge);
         }).catch(function(error){
-           
-            console.log('omar hello there my friend')
             console.log(error);
            
         });;
