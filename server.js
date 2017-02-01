@@ -13,6 +13,7 @@ var db = require("./models");
 app.use(express.static(process.cwd() + "/public"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
@@ -29,7 +30,7 @@ require("./routes/user-api-routes.js")(app);
 
 
 // Syncing our sequelize models and then starting our express app
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
