@@ -4,7 +4,32 @@
 .mainContent{
     text-align: center;
     margin: 10%;
+    color: white;
 }
 .brand-logo{
     margin: 0 5%;
+}
+body {
+    background-image: url("../images/background.jpg");
+    
+}
+.nav-wrapper{
+    background-color: #958F8F;
+}
+h5,h3{
+    color: white;
+}
+#password,#first_name,#last_name,#email{
+    color:white;
+}
+.video{
+    background-color: teal;
+    text-align: center;
+}
+.future{
+    background-color: white;
+    text-align: center;
+}
+h2{
+    color: black;
 }
