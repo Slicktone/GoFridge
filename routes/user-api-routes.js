@@ -100,7 +100,7 @@ module.exports = function(app, passport) {
         passport.authenticate('local', { failureRedirect: '/login' }),
         function(req, res) {
           // console.log(req.user);
-          res.render('hometest', { user: req.user });
+          res.render('login', { user: req.user });
         });
 
       app.get('/member',
