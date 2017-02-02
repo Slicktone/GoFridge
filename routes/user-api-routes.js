@@ -1,5 +1,5 @@
 // Detail routes to User management
-var db = require("./models");
+var db = require("../models");
 var passport = require("passport");
 
 
