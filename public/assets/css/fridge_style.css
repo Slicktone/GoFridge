@@ -16,3 +16,20 @@ body {
 .nav-wrapper{
     background-color: #958F8F;
 }
+h5,h3{
+    color: white;
+}
+#password,#first_name,#last_name,#email{
+    color:white;
+}
+.video{
+    background-color: teal;
+    text-align: center;
+}
+.future{
+    background-color: white;
+    text-align: center;
+}
+h2{
+    color: black;
+}
