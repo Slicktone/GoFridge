@@ -9,8 +9,12 @@ newAccount {
 .brand-logo {
 	margin: 0 5%;
 }
-body {
-    background-image: url("../images/background.jpg");  
+body{
+    background-image: url("../images/background.jpg");
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .nav-wrapper{
     background-color: #958F8F;
@@ -18,7 +22,7 @@ body {
 h3,h5{
     color: white;
 }
-#password,#first_name,#last_name,#email{
+#password,#first_name,#last_name,#email, #myFridge-budget{
     color:white;
 }
 .video{
@@ -28,8 +32,33 @@ h3,h5{
 .future{
     background-color: white;
     text-align: center;
+	padding: 50px;
+}
+.futureTitle{
+	padding-bottom: 30px;
+	
 }
 h2, h4{
     color: teal;
-	background-image: url("../images/background.jpg");
+}
+.modal{
+	background-color: black;
+}
+#myFridge-category,#myFridge-item,#myFridge-price,#refill-date{
+	color: white;
+}
+.flow-text{
+	font-size: 20px;
+	padding: 15px;
+    margin: 45px;
+	line-height: 185%;
+}
+.modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-flat {
+    margin: 8px 0;
+    margin-right: 214px;
+	background-color: teal;
+}
+.dropdown-button{
+	background-color: white;
+	color: black;
 }
