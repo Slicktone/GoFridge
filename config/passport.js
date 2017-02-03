@@ -30,52 +30,52 @@
 
 
 
-// // Enabling a user to Login Strategy
+// Enabling a user to Login Strategy
 
-// // passport.use("local-login", new LocalStrategy({
-// //     usernameField: "email",
-// //     passwordField: "password",
-// //     passReqToCallback: true
-// // }, function(req, email, password, done){
-// //     console.log(req);
-// //     console.log(email);
-// //     db.User.findOne({
-// //         where: {
-// //             email: email
-// //         }
-// //     }).then(function(err, user) {
-// //             if (err)
-// //             return done(err)
-// //             if(!user)
-// //             return done(null, false)
-// //             // req.flash("loginMessage", "No user found.")
-// //             return done(null, User)
-// //         }
-// //     })
+// passport.use("local-login", new LocalStrategy({
+//     usernameField: "email",
+//     passwordField: "password",
+//     passReqToCallback: true
+// }, function(req, email, password, done){
+//     console.log(req);
+//     console.log(email);
+//     db.User.findOne({
+//         where: {
+//             email: email
+//         }
+//     }).then(function(err, user) {
+//             if (err)
+//             return done(err)
+//             if(!user)
+//             return done(null, false)
+//             // req.flash("loginMessage", "No user found.")
+//             return done(null, User)
+//         }
+//     })
 
-// // passport.use("local-login", new LocalStrategy({
+// passport.use("local-login", new LocalStrategy({
 
-// //     usernameField: "email", 
-// //     passwordField: "password", 
-// //     passReqToCallback: true    
-// // }, function(req, username, password, done) {
-// //       console.log(req);
-// //       console.log(email);
-// //     db.User.findOne({ 
-// //         where: {
-// //             email: email
-// //     }).then(function(err, user) {
-// //       if (err) { return done(err); }
-// //       if (!user) {
-// //         return done(null, false, { message: 'Incorrect username.' });
-// //       }
-// //       if (!user.validPassword(password)) {
-// //         return done(null, false, { message: 'Incorrect password.' });
-// //       }
-// //       return done(null, user);
-// //     });
-// //   }
-// // ));
+//     usernameField: "email", 
+//     passwordField: "password", 
+//     passReqToCallback: true    
+// }, function(req, username, password, done) {
+//       console.log(req);
+//       console.log(email);
+//     db.User.findOne({ 
+//         where: {
+//             email: email
+//     }).then(function(err, user) {
+//       if (err) { return done(err); }
+//       if (!user) {
+//         return done(null, false, { message: 'Incorrect username.' });
+//       }
+//       if (!user.validPassword(password)) {
+//         return done(null, false, { message: 'Incorrect password.' });
+//       }
+//       return done(null, user);
+//     });
+//   }
+// ));
 
 
 // // User Creating an Account Strategy

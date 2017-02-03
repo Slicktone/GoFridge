@@ -16,7 +16,7 @@ GoFridge is a full stack web application which allows authenticated users to ent
 
 ### Heroku Deployment
 
-https://
+https://gofridge.herokuapp.com/
 
 ### Tech
 
@@ -31,7 +31,6 @@ GoFridge uses open source tools:
 * [npm sequelize]
 * [materialize]
 * [npm nodemailer]
-* [jsonwebtoken]
 * [passportjs]
 * [JQuery]
 
@@ -54,6 +53,5 @@ $ npm install
 [npm sequelize]: <http://docs.sequelizejs.com/en/v3/>
 [materialize]: <http://materializecss.com/>
 [npm nodemailer]: <https://www.npmjs.com/package/nodemailer>
-[jsonwebtoken]: <https://www.npmjs.com/package/jsonwebtoken>
 [passportjs]: <http://passportjs.org/>
 [JQuery]: <http://api.jquery.com/getb>
