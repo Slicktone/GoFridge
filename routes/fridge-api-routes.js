@@ -25,11 +25,25 @@ module.exports = function(app) {
 	});
 	// POST route for adding an item to myFridge
 	app.post("/member/add", function(req, res) {
-		console.log(req.body);
-		db.myFridges.create(req.body).then(function() {
-			res.redirect("/member");
-		}).catch(function(error) {
-			console.log(error);
+		console.log("this is the email " + req.body.email);
+		db.users.findOne({
+			where: {
+				email: req.body.email
+			}
+		}).then(function(data) {
+			console.log("this is the id " + data.id);
+			console.log(req.body);
+			db.myFridges.create({
+				category: req.body.category,
+				name: req.body.name,
+				price: req.body.price,
+				refill: req.body.refill,
+				userId: data.id
+			}).then(function() {
+				res.redirect("/member");
+			}).catch(function(error) {
+				console.log(error);
+			});
 		});
 	});
 	// PUT route for updating myFridge item refill date
@@ -47,7 +61,7 @@ module.exports = function(app) {
 		});
 	});
 	// DELETE route for deleting items from myFridge
-	app.delete("/member/update/:id", function(req, res) {
+	app.delete("/member/delete/:id", function(req, res) {
 		db.myFridges.destroy({
 			where: {
 				id: req.params.id
