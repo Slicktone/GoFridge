@@ -37,7 +37,7 @@ module.exports = function(app) {
 		}).catch(function(error) {
 			console.log(error);
 		});
-	});
+	}); 
 	// Updating a user
 	app.put("/userForm/update/:id", function(req, res) {
 			var condition = "id = " + req.params.id;

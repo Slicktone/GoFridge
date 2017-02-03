@@ -7,6 +7,9 @@ module.exports = function(app) {
 		res.render("index");
 	});
 	// GET route for all the items in myFridge
+	// app.get("/member", function(req, res) {
+	// 	res.redirect("/member");
+	// });
 	app.post("/member", function(req, res) {
 		// var query = {};
 		// if (req.query.users_id) {
