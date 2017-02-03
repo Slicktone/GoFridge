@@ -31,9 +31,9 @@ module.exports = function(app) {
 				email: req.body.email
 			}
 		}).then(function(data) {
-			console.log("this is the id " + data.id);
-			console.log(req.body);
-			db.myFridges.create({
+			if (data) {
+			
+			db.myFridges.create({				
 				category: req.body.category,
 				name: req.body.name,
 				price: req.body.price,
@@ -44,6 +44,8 @@ module.exports = function(app) {
 			}).catch(function(error) {
 				console.log(error);
 			});
+			}
+				res.redirect("/member");
 		});
 	});
 	// PUT route for updating myFridge item refill date
