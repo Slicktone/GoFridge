@@ -1,17 +1,16 @@
-.newAccount{
-    margin: 10% 0 0 0;
+newAccount {
+	margin: 10% 0 0 0;
 }
 .mainContent{
     text-align: center;
     margin: 10%;
     color: white;
 }
-.brand-logo{
-    margin: 0 5%;
+.brand-logo {
+	margin: 0 5%;
 }
 body {
-    background-image: url("../images/background.jpg");
-    
+    background-image: url("../images/background.jpg");  
 }
 .nav-wrapper{
     background-color: #958F8F;
@@ -32,4 +31,5 @@ h3,h5{
 }
 h2, h4{
     color: teal;
+	background-image: url("../images/background.jpg");
 }
