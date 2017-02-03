@@ -1,8 +1,8 @@
 var express = require("express");
 var methodOverride = require("method-override");
 var bodyParser = require("body-parser");
-var passport = require("passport");
-var LocalStrategy = require('passport-local').Strategy;
+var passport = require("passport"),
+  LocalStrategy = require('passport-local').Strategy;
 var session = require("express-session");
 var path = require('path');
 
@@ -15,23 +15,6 @@ var app = express();
 // Requiring our models for syncing
 var db = require("./models");
 
-
-passport.use(new LocalStrategy({
-  usernameField: 'email'
-  },
-  function(email, password, done) {
-    db.Users.findOne({ where: {email: email}}).then(function(users) {
-      if (!users) {
-        return done(null, false);
-      } else if (password != users.password) {
-        return done(null, false);
-      } else {
-        return done(null, users);
-      }
-    }).catch(function(err){
-      return done(err);
-    });
-}));
 
   passport.serializeUser(function(users, cb) {
     console.log("serialized: " + users.id);
@@ -51,7 +34,23 @@ passport.use(new LocalStrategy({
   });
 
 
-
+// Passport Local Strategy
+passport.use("local", new LocalStrategy({
+  usernameField: 'email'
+  },
+  function(email, password, done) {
+    db.Users.findOne({ where: {email: email}}).then(function(users) {
+      if (!users) {
+        return done(null, false);
+      } else if (password != users.password) {
+        return done(null, false);
+      } else {
+        return done(null, users);
+      }
+    }).catch(function(err){
+      return done(err);
+    });
+}))
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + "/public"));

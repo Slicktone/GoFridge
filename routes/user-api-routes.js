@@ -4,63 +4,77 @@ var passport = require("passport");
 
 
 // Routes
+module.exports = function(app, passport) {
 
-// module.exports = function(app, passport) {
+    // app.get('/',
+    //   function(req, res) {
+    //     res.render('index', 
+		// 			{ 
+		// 				user: req.users 
+		// 			});
+    //   });
 
-//     app.get('/',
-//       function(req, res) {
-//         res.render('index', { user: req.user });
-//       });
-
-//     app.get('/login',
-//       function(req, res){
-//         res.render('member');
-//       });
-
-//     app.post('/login',
-//         passport.authenticate('local', { failureRedirect: '/login' }),
-//         function(req, res) {
-//           // console.log(req.user);
-//           res.render('login', { user: req.user });
-//         });
-
-//       app.get('/member',
-//           function(req, res) {
-//             res.render('member', { user: req.user });
-//           });
+      // app.get('/member',
+      //     function(req, res) {
+      //       res.render('member', { users: req.users });
+      //     });
 
 
-//     app.get('/logout',
-//       function(req, res){
-//         req.logout();
-//         res.redirect('/');
-//       });
 
-//       app.get("/userForm", function(req, res) {
-//         res.render("userForm");
-//       });
 
-//       app.post("/userForm", function(req, res) {
-//           db.User.create({
-//             email: req.body.username,
-//             password: req.body.password
-//           }).then(function(){
+      // app.get("/userForm", function(req, res) {
+      //   res.render("userForm");
+      // });
 
-//             res.redirect('/');
-//           });
-//         });
-//   }
+      // app.post("/userForm/add", function(req, res) {
+      //     db.users.create({
+      //       email: req.body.email,
+      //       password: req.body.password
+      //     }).then(function(){
+      //       res.redirect('member');
+      //     });
+      //   });
+  // }
 
-module.exports = function(app) {
+// module.exports = function(app) {
 	// route to render userForm.handlebars file
 	app.get("/userForm", function(req, res) {
 		res.render("userForm");
 	});
+
+// Passport Login sequence
+
+	app.post('/login',
+		passport.authenticate('local', {
+			failureRedirect: 'login' 
+		}),
+		function(req, res) {
+			console.log(req.users);
+			res.render('/login', 
+				{ 
+					users: req.users
+				});
+		});
+
+    // app.get('/login',
+    //   function(req, res){
+    //     res.render('member');
+		// 		// Note: passport.authenticate() middleware invokes req.login() automatically. This function is 
+		// 		// primarily used when users sign up, during which req.login() 
+		// 		// can be invoked to automatically log in the newly registered user.
+		// 	req.login(users, function(err) {
+		// 	if (err) { return next(err); }
+		// 	return res.redirect('/users/' + req.users.email);
+		// });
+      // });
+
+
+
 	// Existing user login
-	app.post("/login", function(req, res) {
-		console.log(req.body);
-		res.redirect("/member");
-	});
+	// app.post("/login", function(req, res) {
+	// 	console.log(req.body);
+	// 	res.redirect("/member");
+	// });
 	// Show the signed in user details
 	app.get("/userForm/:id", function(req, res) {
 		db.users.findOne({
@@ -102,6 +116,21 @@ module.exports = function(app) {
 				res.redirect("/member");
 			});
 		})
+
+
+
+// Passport logout
+
+	app.get('/logout',
+		function(req, res){
+			req.logout();
+			res.redirect('/');
+	});
+
+
+
+
+
 		// Deleting a user
 	app.delete("/userForm/:id", function(req, res) {
 		db.users.destroy({
