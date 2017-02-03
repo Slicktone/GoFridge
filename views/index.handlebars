@@ -4,6 +4,7 @@
 	<title></title>
 </head>
 <body>
+
 	<div class="container">
 		<!-- Nav Bar -->
 		<nav>
@@ -19,34 +20,15 @@
 				</ul>
 			</div>
 		</nav>
-    <!-- Modal Trigger -->
-		<!-- Modal Structure -->
-		<div class="modal" id="modal1">
-			<div class="modal-content">
-				<form action="login" class="col s12" id="submit-form" method="post" name="submit-form">
-					<h4>Login</h4>
-					<div class="row">
-						<div class="input-field col s12">
-							<input class="validate" id="email" name="email" placeholder="example@email.com" type="email"> <label for="email">Email</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12">
-							<input class="validate" id="password" name="password" placeholder="If you forget your password bad things happen" type="password"> <label for="password">Password</label>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button class=" modal-action modal-close waves-effect waves-green btn-flat" name="action" type="submit">Submit <i class="material-icons right">send</i></button> {{!--<a class=" modal-action modal-close waves-effect waves-green btn-flat" href="#!">Agree</a>--}}
-					</div>
-				</form>
-			</div>
-		</div>		
-    <div class="mainContent">
+
+		 <div class="mainContent">
 			<h3>Don't be a HUNGRY HOMER!!!!!!!!!!!</h3><img class="mainContentImage" src="/assets/images/homerEmptyFridge.jpg">
 			<h3>What is GOFRIDGE?</h3>
 			<p class="flow-text">Welcome to GOFRIDGE where we take you're shopping habits and wants and keep them in a safe convient place for you.</p>
 			<p class="flow-text">Here's how it works.... You create an account with us and once you've done that you then are introduced to our dynamic grocery list in which you can add and take away items as you please to create your grocery list. While making your list you will notice we have implemented our handy budget calculater to help you stay with your financial goal. Once you've created your list you can then set reminders to match your habits to let you know when you next have to buy your favorite products.</p>
 		</div>
+	</div>
+
 		<div class="container-wrapper">
 			<div class="video">
 				<h3>video is gonna go here. these are filler breaks</h3><br>
@@ -82,6 +64,28 @@
 				</div>
 			</div>
 		</div>
-	</div>
+
+		 <!-- Modal Trigger -->
+		<!-- Modal Structure -->
+		<div class="modal" id="modal1">
+			<div class="modal-content">
+				<form action="login" class="col s12" id="submit-form" method="post" name="submit-form">
+					<h4>Login</h4>
+					<div class="row">
+						<div class="input-field col s12">
+							<input class="validate" id="email" name="email" placeholder="example@email.com" type="email"> <label for="email">Email</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input class="validate" id="password" name="password" placeholder="If you forget your password bad things happen" type="password"> <label for="password">Password</label>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button class=" modal-action modal-close waves-effect waves-green btn-flat" name="action" type="submit">Submit <i class="material-icons right">send</i></button> {{!--<a class=" modal-action modal-close waves-effect waves-green btn-flat" href="#!">Agree</a>--}}
+					</div>
+				</form>
+			</div>
+		</div>	
 </body>
 </html>
