@@ -1,13 +1,37 @@
-.newAccount{
-    margin: 10% 0 0 0;
+newAccount {
+	margin: 10% 0 0 0;
 }
-.mainContent{
-    text-align: center;
-    margin: 10%;
+.mainContent {
+	text-align: center;
+	margin: 10%;
+	color: white;
 }
-.brand-logo{
-    margin: 0 5%;
+.brand-logo {
+	margin: 0 5%;
 }
-.modal{
-    height: 900px;
+body {
+	background-image: url("../images/background.jpg");
+}
+.nav-wrapper {
+	background-color: #958F8F;
+}
+h3, h5 {
+	color: white;
+}
+#password, #first_name, #last_name, #email {
+	color: white;
+}
+.video {
+	background-color: teal;
+	text-align: center;
+}
+.container-wrapper {
+    width: 100%;
+}
+.future {
+	background-color: white;
+	text-align: center;
+}
+h2, h4 {
+	color: teal;
 }
