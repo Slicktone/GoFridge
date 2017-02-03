@@ -16,7 +16,7 @@ body {
 .nav-wrapper{
     background-color: #958F8F;
 }
-h5,h3{
+h3,h5{
     color: white;
 }
 #password,#first_name,#last_name,#email{
@@ -30,6 +30,6 @@ h5,h3{
     background-color: white;
     text-align: center;
 }
-h2{
-    color: black;
+h2, h4{
+    color: teal;
 }
