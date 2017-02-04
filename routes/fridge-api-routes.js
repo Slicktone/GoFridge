@@ -62,12 +62,12 @@ module.exports = function(app) {
 				refill: req.body.refill,
 				userId: data.id
 			}).then(function() {
-				res.redirect("/member");
+				res.redirect("member");
 			}).catch(function(error) {
 				console.log(error);
 			});
 			}
-				res.redirect("/member");
+				res.redirect("member");
 		});
 	});
 	// PUT route for updating myFridge item refill date

@@ -1,5 +1,5 @@
 // Detail routes to User management
-var db = require("../models/users.js");
+var db = require("../models");
 var passport = require("passport");
 
 // Routes
@@ -51,13 +51,13 @@ module.exports = function(app) {
 	}))
 // Signup Creating Strategy
 	app.post("/userForm/add", function(req, res, next){
-		db.User.findOne({
+		db.users.findOne({
 			where: {
 				username: req.body.email
 			}
 		}).then(function(user){
 			if(!user){
-				db.User.create({
+				db.users.create({
 					username: req.body.email,
 					password: bcrypt.hashSync(req.body.password)
 				}).then(function(user){
@@ -81,11 +81,6 @@ app.use(function(req, res, callback){
 	}
 	callback();
 })
-
-
-
-
-
 
 
 	// Creating a user
@@ -119,13 +114,13 @@ app.use(function(req, res, callback){
 			});
 		})
 		// Deleting a user
-	// app.delete("/userForm/:id", function(req, res) {
-	// 	db.users.destroy({
-	// 		where: {
-	// 			id: req.params.id
-	// 		}
-	// 	}).then(function() {
-	// 		res.render("index");
-	// 	});
-	// });
+	app.delete("/userForm/:id", function(req, res) {
+		db.users.destroy({
+			where: {
+				id: req.params.id
+			}
+		}).then(function() {
+			res.render("index");
+		});
+	});
 };

@@ -3,7 +3,6 @@ var methodOverride = require("method-override");
 var bodyParser = require("body-parser");
 var passport = require("passport");
 var LocalStrategy = require('passport-local').Strategy;
-var session = require("express-session")({secret: "keyboard cat"});
 var bcrypt = require("bcrypt-nodejs");
 var path = require('path');
 // var User = require("./models/users")(db)
@@ -20,6 +19,7 @@ app.use(express.static(process.cwd() + "/public"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(require("express-session")({secret: "keyboard cat", resave: false, saveUninitialized: false}));
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
@@ -40,7 +40,7 @@ require("./routes/user-api-routes.js")(app);
 // Checking for authentication
 passport.use(new LocalStrategy(function(username, password, callback){
   // Finding someone in the database with same username
-  db.User.findOne({where: {username: username}}).then(function(user, err){
+  db.users.findOne({where: {username: username}}).then(function(user, err){
     if(err){
       return callback(err)
     }
@@ -62,22 +62,16 @@ passport.serializeUser(function(user, callback){
 
 passport.deserializeUser(function(id, callback){
   // findinf the user by id and prepping for logging out
-  db.User.findById(id).then(function(user){
+  db.findById(id).then(function(user){
     callback(null, user)
   })
 })
 
+
 app.use(passport.initialize())
 app.use(passport.session())
 
-
-
-
 // ***************************************************
-
-
-
-
 
 
 // Syncing our sequelize models and then starting our express app
