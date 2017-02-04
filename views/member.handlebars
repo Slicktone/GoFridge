@@ -4,6 +4,7 @@
 	<title></title>
 </head>
 <body>
+
 	<div class="container">
 		<!-- Nav Bar -->
 		<nav>
@@ -23,7 +24,9 @@
 		</nav>
 		<div class="row myFridge-row">
 			<div class="col s8">
+
 				{{!--all the myfridge items--}} 
+
         {{#each myFridges}}
           <div class="myFridges">
             {{this.id}} {{this.category}} {{this.name}} {{this.price}} {{this.refill}}
@@ -31,7 +34,9 @@
         {{/each}}
 			</div>
 			<div class="col s2">
+
 				{{!--updating myFridge items--}} 
+
         {{#each myFridges}}
           <div>
             <form action="member/update/{{this.id}}?_method=PUT" method="post">
@@ -41,7 +46,9 @@
         {{/each}}
 			</div>
 			<div class="col s2">
+
 				{{!--delete myFridge items--}} 
+
         {{#each myFridges}}
           <div>
             <form action="member/delete/{{this.id}}?_method=DELETE" method="post">
@@ -52,9 +59,10 @@
 			</div>
 		</div>
 		<div class="row input-row">
+
 			{{!--adding new myFridge items--}}
 			<form action="member/add" class="col s12" id="submit-form" method="post" name="submit-form">
-				<h5>Create a shopping item</h5>
+				<h5><font color="teal">Create a shopping item</font></h5>
 				<div class="row">
 					<div class="input-field col s12">
 						<input class="validate" id="email" name="email" placeholder="example@email.com" type="email"> <label for="email">Email</label>
@@ -62,24 +70,40 @@
 				</div>
         <div class="row">
 					<div class="input-field col s6">
-						<input class="validate" id="myFridge-category" name="category" placeholder="Produce, Snacks, etc..." type="text"> <label for="myFridge-category">Category</label>
+
+						{{!--this is the dropdown menu for the catagory items--}}
+						<a class='dropdown-button btn' href='#' data-activates='dropdown1'>Category</a>
+						<ul id='dropdown1' class='dropdown-content'>
+								<li><a href="#!">Bread</a></li>
+								<li class="divider"></li>
+								<li><a href="#!">Produce</a></li>
+								<li class="divider"></li>
+								<li><a href="#!">Dairy</a></li>
+								<li class="divider"></li>
+								<li><a href="#!">Home Care</a></li>
+
+							</ul>
 					</div>
 					<div class="input-field col s6">
-						<input class="validate" id="myFridge-item" name="name" placeholder="Apples, Milk, etc..." type="text"> <label for="myFridge-item">Item Name</label>
+						<input class="validate" id="myFridge-item" name="name" placeholder="Apples, Milk, etc..." type="text"> <label for="myFridge-item"><font color="teal">Item Name</font></label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12">
-						<input class="validate" id="myFridge-price" name="price" placeholder="$" type="number"> <label for="myFridge-price">Price</label>
+					<div class="input-field col s6">
+						<input class="validate" id="myFridge-price" name="price" placeholder="$" type="number"> <label for="myFridge-price"><font color="teal">Price</font></label>
 					</div>
 				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input class="datepicker" id="refill-date" name="refill" placeholder="Date MM-DD-YYYY" type="date"> <label for="refill-date">When do you need to buy again?</label>
+			
+					<div class="input-field col s6">
+						<p> <label for="refill-date"><font color="teal">When do you need to buy again?</font></label></p>
+						<br>
+						<input class="datepicker" id="refill-date" name="refill" placeholder="Date MM-DD-YYYY" type="date"> 
 					</div>
+						<div class="row">
 				</div><button class="btn waves-effect waves-light" name="action" type="submit">Submit <i class="material-icons right">send</i></button>
 			</form>
 		</div>
 	</div>
+
 </body>
 </html>
