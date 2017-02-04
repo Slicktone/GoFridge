@@ -1,4 +1,6 @@
+var Sequelize = require("sequelize");
 // User Table
+
 module.exports = function(sequelize, DataTypes) {
 	var users = sequelize.define("users", {
 		first_name: {
