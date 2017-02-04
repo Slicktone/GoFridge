@@ -63,3 +63,21 @@ h2, h4{
 	background-color: white;
 	color: black;
 }
+
+/*member,handlebars*/
+
+.myFridges {
+    color: white;
+}
+
+footer.page-footer {
+    background-color: teal;
+}
+
+.myFridge-row {
+    color: white;
+}
+
+.delete-button {
+    color: teal;
+}

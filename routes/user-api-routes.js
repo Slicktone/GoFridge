@@ -50,27 +50,27 @@ module.exports = function(app) {
 		successRedirect: "/member"
 	}))
 // Signup Creating Strategy
-	app.post("/userForm/add", function(req, res, next){
-		db.users.findOne({
-			where: {
-				username: req.body.email
-			}
-		}).then(function(user){
-			if(!user){
-				db.users.create({
-					username: req.body.email,
-					password: bcrypt.hashSync(req.body.password)
-				}).then(function(user){
-					passport.authenticate("local",{
-						successRedirect: "/member",
-						failureRedirect: "/userForm"
-					})(req, res, next) // Passing the cb asynchronously 
-				})
-			} else {
-				res.send("This user exists");
-			}
-		})
-	})
+	// app.post("/userForm/add", function(req, res, next){
+	// 	db.users.findOne({
+	// 		where: {
+	// 			username: req.body.email
+	// 		}
+	// 	}).then(function(user){
+	// 		if(!user){
+	// 			db.users.create({
+	// 				username: req.body.email,
+	// 				password: bcrypt.hashSync(req.body.password)
+	// 			}).then(function(user){
+	// 				passport.authenticate("local",{
+	// 					successRedirect: "/member",
+	// 					failureRedirect: "/userForm"
+	// 				})(req, res, next) // Passing the cb asynchronously 
+	// 			})
+	// 		} else {
+	// 			res.send("This user exists");
+	// 		}
+	// 	})
+	// })
 // Middleware to check for every route
 // Check if the user is logged in and use a local variable in views(handlebars variable)
 app.use(function(req, res, callback){
@@ -84,6 +84,14 @@ app.use(function(req, res, callback){
 
 
 	// Creating a user
+	app.post("/userForm/add", function(req, res) {
+		console.log(req.body);
+		db.users.create(req.body).then(function() {
+			res.redirect("/member");
+		}).catch(function(error) {
+			console.log(error);
+		});
+	}); 
 	// app.post("/userForm/add", function(req, res) {
 	// 	console.log(req.body);
 	// 	db.users.create(req.body
