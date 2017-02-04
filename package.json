@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Slicktone/GoFridge#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.16.0",
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
