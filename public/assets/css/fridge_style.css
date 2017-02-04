@@ -1,34 +1,71 @@
 newAccount {
 	margin: 10% 0 0 0;
 }
-.mainContent {
-	text-align: center;
-	margin: 10%;
-	color: white;
+.mainContent{
+    text-align: center;
+    margin: 10%;
+    color: white;
 }
 .brand-logo {
 	margin: 0 5%;
 }
-body {
-	background-image: url("../images/background.jpg");
+body{
+    background-image: url("../images/background.jpg");
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.nav-wrapper {
-	background-color: #958F8F;
+.nav-wrapper{
+    background-color: #958F8F;
 }
-h3, h5 {
+h3,h5{
+    color: white;
+}
+#password,#first_name,#last_name,#email, #myFridge-budget{
+    color:white;
+}
+.video{
+    background-color: teal;
+    text-align: center;
+}
+.future{
+    background-color: white;
+    text-align: center;
+	padding: 50px;
+}
+.futureTitle{
+	padding-bottom: 30px;
+	
+}
+h2, h4{
+    color: teal;
+}
+.modal{
+	background-color: black;
+}
+#myFridge-category,#myFridge-item,#myFridge-price,#refill-date{
 	color: white;
 }
-#password, #first_name, #last_name, #email {
-	color: white;
+.flow-text{
+	font-size: 20px;
+	padding: 15px;
+    margin: 45px;
+	line-height: 185%;
 }
-.video {
+
+.modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-flat {
+    margin: 8px 0;
+    margin-right: 214px;
 	background-color: teal;
-	text-align: center;
 }
-.future {
+.dropdown-button{
 	background-color: white;
-	text-align: center;
+	color: black;
 }
-h2, h4 {
-	color: teal;
+
+/*member,handlebars*/
+
+.myFridges {
+    color: white;
 }

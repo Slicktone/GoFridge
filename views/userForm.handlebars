@@ -19,19 +19,52 @@
 				</ul>
 			</div>
 		</nav>
-        <!-- Modal Structure -->
+		<br>
+		<br>
+		<!-- Form -->
+		<div class="row newAccount">
+			<form action="userForm/add" class="col s12" id="submit-form" method="post" name="submit-form">
+				<h5>Create an Account</h5>
+				<div class="row">
+					<div class="input-field col s6">
+						<input class="validate" id="first_name" name="first_name" placeholder="John" type="text"> <label for="first_name"><font color="teal">First Name</font></label>
+					</div>
+					<div class="input-field col s6">
+						<input class="validate" id="last_name" name="last_name" placeholder="Doe" type="text"> <label for="last_name"><font color="teal">Last Name</font></label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input class="validate" id="email" name="email" placeholder="example@email.com" type="email"> <label for="email"><font color="teal">Email</font></label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input class="validate" id="password" name="password" placeholder="Enter Password" type="password"> <label for="password"><font color="teal">Password</font></label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input class="validate" id="myFridge-budget" name="budget" placeholder="$" type="number"> <label for="myFridge-budget"><font color="teal">Budget</font></label>
+					</div>
+				</div><button class="btn waves-effect waves-light" name="action" type="submit">Submit <i class="material-icons right">send</i></button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Modal Structure -->
 		<div class="modal" id="modal1">
 			<div class="modal-content">
-				<form action="login" class="col s12" id="submit-form" method="post" name="submit-form">
-					<h4>Login</h4>
+				<form action="member" class="col s12" id="submit-form" method="get" name="submit-form">
+					<h4><font color="teal">Login</font></h4>
 					<div class="row">
 						<div class="input-field col s12">
-							<input class="validate" id="email" name="email" placeholder="example@email.com" type="email"> <label for="email">Email</label>
+							<input class="validate" id="email" name="email" placeholder="example@email.com" type="email"> <label for="email"><font color="teal">Email</font></label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input class="validate" id="password" name="password" placeholder="If you forget your password bad things happen" type="password"> <label for="password">Password</label>
+							<input class="validate" id="password" name="password" placeholder="Enter Password" type="password"> <label for="password"><font color="teal">Password</font></label>
 						</div>
 					</div>
 					<div class="modal-footer">
@@ -40,35 +73,5 @@
 				</form>
 			</div>
 		</div>
-        <!-- Form -->
-		<div class="row newAccount">
-			<form action="userForm/add" class="col s12" id="submit-form" method="post" name="submit-form">
-				<h5>Create an Account</h5>
-				<div class="row">
-					<div class="input-field col s6">
-						<input class="validate" id="first_name" name="first_name" placeholder="John" type="text"> <label for="first_name">First Name</label>
-					</div>
-					<div class="input-field col s6">
-						<input class="validate" id="last_name" name="last_name" placeholder="Doe" type="text"> <label for="last_name">Last Name</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input class="validate" id="email" name="email" placeholder="example@email.com" type="email"> <label for="email">Email</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input class="validate" id="password" name="password" placeholder="If you forget your password bad things happen" type="password"> <label for="password">Password</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<input class="validate" id="myFridge-budget" name="budget" placeholder="$" type="number"> <label for="myFridge-budget">Budget</label>
-					</div>
-				</div><button class="btn waves-effect waves-light" name="action" type="submit">Submit <i class="material-icons right">send</i></button>
-			</form>
-		</div>
-	</div>
 </body>
 </html>
