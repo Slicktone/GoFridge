@@ -30,11 +30,6 @@ module.exports = function(app) {
 	// POST route for adding an item to myFridge
 	app.post("/member/add", function(req, res) {
 
-		console.log(req.body);
-		db.myFridges.create(req.body).then(function() {
-			res.redirect("/member");
-		}).catch(function(error) {
-			console.log(error);
 		});
 	});
 	// PUT route for updating myFridge item refill date
@@ -53,7 +48,6 @@ module.exports = function(app) {
 	});
 	// DELETE route for deleting items from myFridge
 
-	app.delete("/member/update/:id", function(req, res) {
 		db.myFridges.destroy({
 			where: {
 				id: req.params.id
