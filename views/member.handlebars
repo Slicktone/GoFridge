@@ -23,20 +23,57 @@
 			</div>
 		</nav>
 		<div class="row myFridge-row">
+		
+		<table>
+        <thead>
+          <tr>
+              <th data-field="id">ID</th>
+              <th data-field="category">Category</th>
+              <th data-field="name">Name</th>
+							<th data-field="price">Price</th>
+							<th data-field="refill">Refill</th>
+							<th data-field="delete">Delete</th>
+          </tr>
+        </thead>
+
+        <tbody>
+					 {{#each myFridges}}
+ 
+          <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.category}}</td>
+            <td>{{this.name}}</td>
+						<td>{{this.price}}</td>
+						<td>{{this.refill}}</td>
+						<td><form action="member/delete/{{this.id}}?_method=DELETE" method="post">
+              <input name="devoured" type="hidden" value="true"> <button class="delete-button" type="submit">Delete</button>
+            </form></td>
+          </tr>
+          
+         {{/each}}
+				</tbody>
+
+      </table>
+		
+		
+		
+		
+		
+		
 			<div class="col s8">
 
 				{{!--all the myfridge items--}} 
 
-        {{#each myFridges}}
+        {{!--{{#each myFridges}}
           <div class="myFridges">
             {{this.id}} {{this.category}} {{this.name}} {{this.price}} {{this.refill}}
           </div>
         {{/each}}
 			</div>
-			<div class="col s2">
+			<div class="col s2">--}}
 
 				{{!--updating myFridge items--}} 
-
+{{!--
         {{#each myFridges}}
           <div>
             <form action="member/update/{{this.id}}?_method=PUT" method="post">
@@ -45,18 +82,18 @@
           </div>
         {{/each}}
 			</div>
-			<div class="col s2">
+			<div class="col s2">--}}
 
 				{{!--delete myFridge items--}} 
 
-        {{#each myFridges}}
+        {{!--{{#each myFridges}}
           <div>
             <form action="member/delete/{{this.id}}?_method=DELETE" method="post">
               <input name="devoured" type="hidden" value="true"> <button class="delete-button" type="submit">Delete</button>
             </form>
           </div>
         {{/each}}
-			</div>
+			</div>--}}
 		</div>
 		<div class="row input-row">
 
@@ -107,6 +144,30 @@
 			</form>
 		</div>
 	</div>
-
+ <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">GoFridge!</h5>
+                <p class="grey-text text-lighten-4">Better manage your shopping experience.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Devs</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Tony</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Omar</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Bryant</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Eugene</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2017 Copyright
+            <a class="grey-text text-lighten-4 right" href="https://github.com/Slicktone/GoFridge" target="_blank">github</a>
+            </div>
+          </div>
+        </footer>
 </body>
 </html>

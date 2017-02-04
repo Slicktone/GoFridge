@@ -69,3 +69,15 @@ h2, h4{
 .myFridges {
     color: white;
 }
+
+footer.page-footer {
+    background-color: teal;
+}
+
+.myFridge-row {
+    color: white;
+}
+
+.delete-button {
+    color: teal;
+}
