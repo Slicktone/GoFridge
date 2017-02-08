@@ -27,11 +27,11 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		}
 	}, {
-		// We're saying that we want our User to have myFridge
+		// User to have myFridge
 		classMethods: {
 			associate: function(models) {
-				// When we delete a User, we'll also delete their fridge "cascade"
-				// A User (foreignKey) is required or a fridge can't be made
+				// delete fridge when user deleted
+				// A User is required or a fridge can't be made
 				myFridges.belongsTo(models.users, {
 					onDelete: "cascade",
 					foreignKey: {
@@ -41,7 +41,6 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		}
 	}, {
-		// may not need timestamps? OH: I think this is needed for Heroku 
 		timestamps: false
 	});
 	return myFridges;

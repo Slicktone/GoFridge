@@ -2,14 +2,12 @@
 
 ![N|Solid](http://cdn.trendhunterstatic.com/thumbs/teleport-fridge-elminates.jpeg)
 
-GoFridge is a full stack web application which allows authenticated users to enter their grocery shopping list, with shopping items, latest purchase price and purchase frequency. User will receive email notifications when their shopping items are near depletion. User will also receive email notifcations when deals that match their shopping habits are available. 
+GoFridge is a full stack web application which allows authenticated users to enter their grocery shopping list, with shopping items, latest purchase price and purchase frequency.
 
   - Follows an MVC design pattern
-  - Leverages two Node.js Express Framework servers
-  - User access will be authenticated using Passportjs/JWT.
+  - Leverages Node.js Express Framework server
   - MySQL with the Sequelize ORM library
   - Handlebars to generate HTML
-  - Nodemailer to send email notifciation from node.js application
   - Heroku for deployment 
 
 > Full-stack site with user input through the browser. 
@@ -30,8 +28,6 @@ GoFridge uses open source tools:
 * [npm mysql]
 * [npm sequelize]
 * [materialize]
-* [npm nodemailer]
-* [passportjs]
 * [JQuery]
 
 ### Installation
@@ -52,6 +48,4 @@ $ npm install
 [npm mysql]: <https://www.npmjs.com/package/mysql>
 [npm sequelize]: <http://docs.sequelizejs.com/en/v3/>
 [materialize]: <http://materializecss.com/>
-[npm nodemailer]: <https://www.npmjs.com/package/nodemailer>
-[passportjs]: <http://passportjs.org/>
 [JQuery]: <http://api.jquery.com/getb>
