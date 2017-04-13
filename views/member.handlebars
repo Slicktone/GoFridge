@@ -4,19 +4,27 @@
 	<title></title>
 </head>
 <body>
-
-	<div class="container">
-		<!-- Nav Bar -->
-		<nav>
+	<div class="navbar-fixed">
+		<nav class="transparent">
 			<div class="nav-wrapper">
-				<a class="brand-logo" href="/">GoFridge</a>
-				<ul class="right hide-on-med-and-down" id="nav-mobile">
-					<li style="list-style: none">
+				<a class="brand-logo" href="/">GoFridge</a> <a class="button-collapse" data-activates="mobile-demo" href="#"><i class="fa fa-bars fa-lg"></i></a>
+				<ul class="right hide-on-med-and-down">
+					<li>
 						<a href="/">Logout</a>
 					</li>
 				</ul>
 			</div>
 		</nav>
+	</div>
+	<div class="container">
+		<!-- Nav Bar -->
+		<div class="nav-wrapper">
+			<ul class="side-nav" id="mobile-demo">
+				<li>
+					<a href="/">Logout</a>
+				</li>
+			</ul>
+		</div>	
 		<div class="row myFridge-row">
 		{{!--Display myFridge items--}}
 		<table>
