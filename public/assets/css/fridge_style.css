@@ -6,9 +6,6 @@ newAccount {
     margin: 10%;
     color: white;
 }
-.brand-logo {
-	margin: 0 5%;
-}
 body{
     background-image: url("../images/background.jpg");
 	background-attachment: fixed;

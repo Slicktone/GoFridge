@@ -4,25 +4,35 @@
 	<title></title>
 </head>
 <body>
-
-	<div class="container">
-		<!-- Nav Bar -->
-		<nav>
+	<div class="navbar-fixed">
+		<nav class="transparent">
 			<div class="nav-wrapper">
-				<a class="brand-logo" href="/">GoFridge</a>
-				<ul class="right hide-on-med-and-down" id="nav-mobile">
+				<a class="brand-logo" href="/">GoFridge</a> <a class="button-collapse" data-activates="mobile-demo" href="#"><i class="fa fa-bars fa-lg"></i></a>
+				<ul class="right hide-on-med-and-down">
 					<li>
-						<a class="waves-effect waves-light" href="#modal1">Login</a>
+						<a class="" href="#modal1">Login</a>
 					</li>
 					<li>
-						<a href="/userForm">Create Account</a>
+						<a class="" href="/userForm">Create Account</a>
 					</li>
 				</ul>
 			</div>
 		</nav>
-
+	</div>
+	<div class="container">
+		<!-- Nav Bar -->
+		<div class="nav-wrapper">
+			<ul class="side-nav" id="mobile-demo">
+				<li>
+					<a class="" href="#modal1">Login</a>
+				</li>
+				<li>
+					<a class="" href="/userForm">Create Account</a>
+				</li>
+			</ul>
+		</div>		
 		 <div class="mainContent">
-			<h3>Don't be a HUNGRY HOMER!!!!!!!!!!!</h3><img class="mainContentImage" src="/assets/images/homerEmptyFridge.jpg">
+			<h3>Don't be a HUNGRY HOMER</h3><img class="mainContentImage" src="/assets/images/homerEmptyFridge.jpg">
 			<h3>What is GOFRIDGE?</h3>
 			<p class="flow-text">Welcome to GOFRIDGE where we take you're shopping habits and wants and keep them in a safe convient place for you.</p>
 			<p class="flow-text">Here's how it works.... You create an account with us and once you've done that you then are introduced to our dynamic grocery list in which you can add and take away items as you please to create your grocery list. While making your list you will notice we have implemented our handy budget calculater to help you stay with your financial goal. Once you've created your list you can then set reminders to match your habits to let you know when you next have to buy your favorite products.</p>
@@ -99,6 +109,5 @@
             </div>
           </div>
         </footer>
-		
 </body>
 </html>
